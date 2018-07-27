@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  
+ <style>
+  @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600';
+
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body{
+    height:100%;
+    width: 100%;
+	}
+
+a {
+  color:#FFF;
+  text-decoration:none;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+body {
+  padding:0px;
+  margin:0;
+  font-family:Times New Roman;
+  background: url("background.png");
+}
+
+h2 {
+  margin-top:0px;
+  color:blue;
+  font-weight:400;
+  font-style: italic;
+  text-align:center;
+}
+
+p {
+  color:black;
+  font-size:16px;
+  line-height:30px;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.flex {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+}
+
+.modalcontainer {
+  display:none;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  &.active {
+    display:block;
+  }
+}
+
+.modal {
+  display:none;
+  position:relative;
+  width:600px;
+  height:330px;
+  background-color:pink;
+  &.active {
+    display:block;
+  }
+  .content {
+    padding:30px;
+  }
+  .close {
+    cursor:pointer;
+    color:#FFF;
+    width:50px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    position:absolute;
+    right:0;
+    color:#999;
+    font-size:40px;
+    
+  }
+  .buttons {
+    width:600px;
+    position:absolute;
+    bottom:0;
+    height:50px;
+    background-color:red;
+    a {
+      width:50%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      transition:0.3s;
+      text-transform:uppercase;
+      font-weight:bold;  
+    }
+  }
+}
+
+.modalbttn {
+  background-color:red;
+  padding:12px 25px;
+  text-transform:uppercase;
+  border-radius:4px;
+}
+.c-button {
+  background-color:green;
+  padding:15px 25px;
+  text-transform:uppercase;
+  border-radius:4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="flex">
+  <div class="modalcontainer">
+    <div class="flex">
+      <div class="modal">
+        <div class="close"><span>&#43;</span></div>
+        <div class="content">
+        <h2>Beautiful View</h2>
+        <p>Let's go up in here, and start having some fun The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it. It's a super day, so why not make a beautiful sky?</p>
+		 <div class="o-flexy u-mrg-b-5">
+    <button class="c-button">Cancel</button>
+    <button class="c-button">Save</button>
+  </div>
+		</div>
+        
+      </div>
+    </div>
+  </div>
+  <a href="#0" class="modalbttn">Open Modal</a>
+</div>
+<script>
+$(".modalbttn").click(function() {
+  $(".modalcontainer").fadeIn("slow");
+  $(".modal").fadeIn("slow");
+});
+
+$(".close").click(function() {
+  $(".modalcontainer").fadeOut("slow");
+  $(".modal").fadeOut("slow");
+});
+
+$(".c-button").click(function() {
+  $(".modalcontainer").fadeOut("slow");
+  $(".modal").fadeOut("slow");
+});
+</script>
+</body> 
+</html>

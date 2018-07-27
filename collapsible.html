@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+html {
+    min-height: 100%;
+    font-family: 'Times New Roman', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: url("background.png");
+
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 3rem;
+	font-style: italic;
+    color: red;
+    text-align: center;
+}
+
+.accordion {
+    background: linear-gradient(to bottom right, white, #F8F8F8);
+    max-width: 400px;
+    background: green;
+    margin: 0 auto;
+	text-align: center;
+ }
+
+.accordion-header {
+    border-bottom: 1px solid #DDE0E7;
+    color: #2a313a;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 1.5rem;
+}
+
+.accordion-header:hover {
+    background: #F6F7F9;
+}
+
+.accordion-content {
+    display: block;
+    border-bottom: 1px solid #DDE0E7;
+   
+    padding: 1.5rem;  
+}
+
+.accordion-header::before {
+    content: '';
+    vertical-align: middle;
+    display: none;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    background-color: blue;
+    margin-right: .75rem;
+}
+
+.active.accordion-header::before {
+    background-color: black;
+}
+
+.flex-container {
+   display: flex-block;
+   flex-direction: column;
+   align-items:flex-center;
+   flex-shrink 0;
+   }
+</style>
+</head>
+<body>
+<div class="flex-container">
+<h1>FRONT-END</h1>
+
+<div class="accordion">
+    <div class="accordion-header">HTML</div>
+    <ul class="inner">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+    <div class="accordion-header">CSS</div>
+    <ul class="inner">
+          <img src="autum.png" alt="Autum" width="200">
+          <li>Option 3</li>
+    </ul>
+  
+    <div class="accordion-header">JAVASCRIPT</div>
+	<ul class="inner">
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+
+</div>
+<script>
+ $(".accordion").on("click", ".accordion-header", function() {
+    $(this).toggleClass("active").next().slideToggle();
+ });
+</script>
+</body>
+</html>
